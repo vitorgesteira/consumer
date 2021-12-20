@@ -20,17 +20,9 @@ public class Program {
 		list.add(new Product("HD Case", 80.90));
 		
 		double factor = 1.1;
-		
-		/* pode ser feito desta forma
-		 * Consumer<Product> cons = p -> p.setPrice(p.getPrice() * factor);*/
-		
-		//ou desta forma
-		Consumer<Product> cons = p -> {
-			p.setPrice(p.getPrice() * factor);
-		};
-		
+				
 		//metodo que percorre a coleção e executa um consumer pra cada elemento da coleção
-		list.forEach(cons);
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
 		
 		//metodo para imprimir a lista
 		list.forEach(System.out::println);//referencia para o metodo println
