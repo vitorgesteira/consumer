@@ -25,10 +25,6 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
-	public void nonStaticPriceUpdate() {
-		price = price * 1.1;
-	}
 
 	@Override
 	public String toString() {

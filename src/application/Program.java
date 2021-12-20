@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 
 import entities.Product;
 
@@ -18,8 +19,18 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
+		double factor = 1.1;
+		
+		/* pode ser feito desta forma
+		 * Consumer<Product> cons = p -> p.setPrice(p.getPrice() * factor);*/
+		
+		//ou desta forma
+		Consumer<Product> cons = p -> {
+			p.setPrice(p.getPrice() * factor);
+		};
+		
 		//metodo que percorre a coleção e executa um consumer pra cada elemento da coleção
-		list.forEach(Product::nonStaticPriceUpdate);//referencia do metodo nao statico em Product
+		list.forEach(cons);
 		
 		//metodo para imprimir a lista
 		list.forEach(System.out::println);//referencia para o metodo println
