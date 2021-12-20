@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Locale;
 
 import entities.Product;
-import util.PriceUpdate;
 
 public class Program {
 
@@ -20,7 +19,7 @@ public class Program {
 		list.add(new Product("HD Case", 80.90));
 		
 		//metodo que percorre a coleção e executa um consumer pra cada elemento da coleção
-		list.forEach(new PriceUpdate());
+		list.forEach(Product::staticPriceUpdate);//referencia do metodo statico em Product
 		
 		//metodo para imprimir a lista
 		list.forEach(System.out::println);//referencia para o metodo println
