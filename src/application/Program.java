@@ -19,7 +19,7 @@ public class Program {
 		list.add(new Product("HD Case", 80.90));
 		
 		//metodo que percorre a coleção e executa um consumer pra cada elemento da coleção
-		list.forEach(Product::staticPriceUpdate);//referencia do metodo statico em Product
+		list.forEach(Product::nonStaticPriceUpdate);//referencia do metodo nao statico em Product
 		
 		//metodo para imprimir a lista
 		list.forEach(System.out::println);//referencia para o metodo println
